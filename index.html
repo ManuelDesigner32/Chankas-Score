@@ -144,7 +144,7 @@ canvas{display:block;width:100%;height:auto;}
   <!-- Toolbar -->
   <div class="toolbar">
     <div class="trow">
-      <span class="lbl">Chankas:</span>
+      <span class="lbl">CHANKAS:</span>
       <div class="pos-btns">
         <div class="pos-btn active" id="pb-local" onclick="setPosLocal('local')">🏠 Local</div>
         <div class="pos-btn" id="pb-visita" onclick="setPosLocal('visita')">✈️ Visita</div>
@@ -190,16 +190,16 @@ canvas{display:block;width:100%;height:auto;}
     <div class="trow" style="justify-content:center;">
       <div style="display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(3,36px);gap:3px;">
         <div></div>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',0,-10)">▲</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',0,-5)">▲</button>
         <div></div>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',-10,0)">◀</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',-5,0)">◀</button>
         <button class="btn btn-dark" style="padding:0;font-size:12px;width:36px;height:36px;" onclick="nudge('foto',0,0)">·</button>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',10,0)">▶</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',5,0)">▶</button>
         <div></div>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',0,10)">▼</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',0,5)">▼</button>
         <div></div>
       </div>
-      <div style="font-size:9px;color:#888;margin-left:10px;line-height:1.6;">Ajuste fino<br>del elemento<br>seleccionado<br><span style="color:#f5c518">10px</span> por toque</div>
+      <div style="font-size:9px;color:#888;margin-left:10px;line-height:1.6;">Ajuste fino<br>del elemento<br>seleccionado<br><span style="color:#f5c518">5px</span> por toque</div>
     </div>
   </div>
 
@@ -228,14 +228,14 @@ canvas{display:block;width:100%;height:auto;}
   <div style="background:#1a0000;padding:6px 12px 2px;font-size:10px;color:#f5c518;font-weight:bold;">🛡️ ESCUDO RIVAL — toca ➕ para agregar</div>
   <div class="rival-gallery" id="rival-gallery-simple">
     <div class="add-rival" title="Agregar escudo rival">
-      <span style="font-size:13px;font-weight:bold;color:#c41e1e;">➕<br><span style="font-size:8px;color:#888">Subir<br>escudo</span></span>
+      <span style="font-size:13px;font-weight:bold;color:#c41e1e;">➕<br><span style="font-size:8px;color:#888">Subir<br>logo</span></span>
       <input type="file" accept="image/*" onchange="addRival('simple',this)">
     </div>
   </div>
 
   <div class="toolbar">
     <div class="trow">
-      <span class="lbl">Chankas:</span>
+      <span class="lbl">CHANKAS:</span>
       <div class="pos-btns">
         <div class="pos-btn active" id="pb-s-izq" onclick="setPosSimple('izq')">⬅️ Local</div>
         <div class="pos-btn" id="pb-s-der" onclick="setPosSimple('der')">➡️ Visita</div>
@@ -277,16 +277,16 @@ canvas{display:block;width:100%;height:auto;}
     <div class="trow" style="justify-content:center;">
       <div style="display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(3,36px);gap:3px;">
         <div></div>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',0,-10)">▲</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',0,-5)">▲</button>
         <div></div>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',-10,0)">◀</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',-5,0)">◀</button>
         <button class="btn btn-dark" style="padding:0;font-size:12px;width:36px;height:36px;" onclick="nudge('simple',0,0)">·</button>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',10,0)">▶</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',5,0)">▶</button>
         <div></div>
-        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',0,10)">▼</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',0,5)">▼</button>
         <div></div>
       </div>
-      <div style="font-size:9px;color:#888;margin-left:10px;line-height:1.6;">Ajuste fino<br>del elemento<br>seleccionado<br><span style="color:#f5c518">10px</span> por toque</div>
+      <div style="font-size:9px;color:#888;margin-left:10px;line-height:1.6;">Ajuste fino<br>del elemento<br>seleccionado<br><span style="color:#f5c518">5px</span> por toque</div>
     </div>
   </div>
 
@@ -700,7 +700,7 @@ async function redrawS() {
   drawIndicator(ctx, pos.x, pos.y, pos.r);
 
   const names = {chankas:'🔴 Chankas', rival:'🔵 Rival', score:'🔢 Score'};
-  document.getElementById('sb-simple').innerHTML = `Moviendo: <span>${names[S.active]}</span> — arrastra o pellizca para zoom`;
+  document.getElementById('sb-simple').innerHTML = `Moviendo: <span>${names[S.active]}</span> — arrastra o haz zoom don los dedos`;
 }
 
 // ============================================================
