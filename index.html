@@ -672,7 +672,7 @@ async function redraw() {
 
   // Status
   const names = {foto:'📷 Foto', chankas:'🔴 Chankas', rival:'🔵 Rival', score:'🔢 Score'};
-  document.getElementById('sb-foto').innerHTML = `Moviendo: <span>${names[F.active]}</span> — arrastra o haz zoom don los dedos`;
+  document.getElementById('sb-foto').innerHTML = `Moviendo: <span>${names[F.active]}</span> — arrastra o haz zoom con los dedos`;
 }
 
 async function redrawS() {
@@ -700,7 +700,7 @@ async function redrawS() {
   drawIndicator(ctx, pos.x, pos.y, pos.r);
 
   const names = {chankas:'🔴 Chankas', rival:'🔵 Rival', score:'🔢 Score'};
-  document.getElementById('sb-simple').innerHTML = `Moviendo: <span>${names[S.active]}</span> — arrastra o haz zoom don los dedos`;
+  document.getElementById('sb-simple').innerHTML = `Moviendo: <span>${names[S.active]}</span> — arrastra o haz zoom con los dedos`;
 }
 
 // ============================================================
