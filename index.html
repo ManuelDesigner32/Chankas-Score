@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Chankas Score - By Manuel</title>
+<title>Chankas Score - Manuel</title>
 <style>
 @font-face {
   font-family: 'Eight';
@@ -186,6 +186,21 @@ canvas{display:block;width:100%;height:auto;}
       <button class="btn btn-dark" style="font-size:10px;padding:6px 10px" onclick="addFoto()">📷 Subir foto</button>
       <input type="file" id="inp-foto" accept="image/*" style="display:none" onchange="loadFoto(this)">
     </div>
+    <!-- Flechas ajuste fino -->
+    <div class="trow" style="justify-content:center;">
+      <div style="display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(3,36px);gap:3px;">
+        <div></div>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',0,-10)">▲</button>
+        <div></div>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',-10,0)">◀</button>
+        <button class="btn btn-dark" style="padding:0;font-size:12px;width:36px;height:36px;" onclick="nudge('foto',0,0)">·</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',10,0)">▶</button>
+        <div></div>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('foto',0,10)">▼</button>
+        <div></div>
+      </div>
+      <div style="font-size:9px;color:#888;margin-left:10px;line-height:1.6;">Ajuste fino<br>del elemento<br>seleccionado<br><span style="color:#f5c518">10px</span> por toque</div>
+    </div>
   </div>
 
   <div class="stage" id="stage-foto"><canvas id="cv-foto"></canvas></div>
@@ -259,6 +274,20 @@ canvas{display:block;width:100%;height:auto;}
     <div class="trow">
       <button class="btn btn-blue" style="font-size:10px;padding:6px 10px" onclick="centerEl('simple')">🎯 Centrar</button>
     </div>
+    <div class="trow" style="justify-content:center;">
+      <div style="display:grid;grid-template-columns:repeat(3,36px);grid-template-rows:repeat(3,36px);gap:3px;">
+        <div></div>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',0,-10)">▲</button>
+        <div></div>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',-10,0)">◀</button>
+        <button class="btn btn-dark" style="padding:0;font-size:12px;width:36px;height:36px;" onclick="nudge('simple',0,0)">·</button>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',10,0)">▶</button>
+        <div></div>
+        <button class="btn btn-dark" style="padding:0;font-size:16px;width:36px;height:36px;" onclick="nudge('simple',0,10)">▼</button>
+        <div></div>
+      </div>
+      <div style="font-size:9px;color:#888;margin-left:10px;line-height:1.6;">Ajuste fino<br>del elemento<br>seleccionado<br><span style="color:#f5c518">10px</span> por toque</div>
+    </div>
   </div>
 
   <div class="stage" id="stage-simple"><canvas id="cv-simple"></canvas></div>
@@ -274,10 +303,10 @@ canvas{display:block;width:100%;height:auto;}
 // CLOUDINARY URLS
 // ============================================================
 const CDN = {
-  final_local:  'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782672201/FINAL_CALIENTE_-_LOCAL_amyjzv.png',
-  medio_local:  'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782672201/MEDIO_CALIENTE_LOCAL_bv9fx9.png',
-  final_visita: 'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782672209/MEDIO_FINAL_CALIENTE_-_VISITA_b04vdx.png',
-  medio_visita: 'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782672203/MEDIO_TIEMPO_CALIENTE_-_VISITA_klmhki.png',
+  final_local:  'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782693067/FINAL_CALIENTE_-_LOCAL_qlqu3w.png',
+  medio_local:  'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782693068/MEDIO_CALIENTE_LOCAL_wold3n.png',
+  final_visita: 'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782693067/MEDIO_FINAL_CALIENTE_-_VISITA_crxaz5.png',
+  medio_visita: 'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782693065/MEDIO_TIEMPO_CALIENTE_-_VISITA_cvqa6p.png',
   chankas:      'https://res.cloudinary.com/dnhg1r0qc/image/upload/v1782672200/CHANKAS_LOGO_udlsyd.png',
 };
 
@@ -483,6 +512,20 @@ function updateKerning(panel, val) {
 // ============================================================
 // CENTER
 // ============================================================
+function nudge(panel, dx, dy) {
+  if (panel === 'foto') {
+    if (F.active === 'foto')    { F.fx += dx; F.fy += dy; }
+    else if (F.active === 'chankas') { F.cx += dx; F.cy += dy; }
+    else if (F.active === 'rival')   { F.rx += dx; F.ry += dy; }
+    else if (F.active === 'score')   { F.sx += dx; F.sy += dy; }
+    redraw();
+  } else {
+    if (S.active === 'chankas')      { S.cx += dx; S.cy += dy; }
+    else if (S.active === 'rival')   { S.rx += dx; S.ry += dy; }
+    else if (S.active === 'score')   { S.sx += dx; S.sy += dy; }
+    redrawS();
+  }
+}
 function centerEl(panel) {
   if (panel === 'foto') {
     if (F.active === 'foto') { F.fx = 699; F.fy = 318; }
