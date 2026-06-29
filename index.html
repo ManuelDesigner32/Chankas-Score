@@ -113,8 +113,8 @@ canvas{display:block;width:100%;height:auto;}
 
 <!-- TABS -->
 <div class="tabs">
-  <button class="tab active" onclick="switchTab('foto')">📸 CON FOTO</button>
-  <button class="tab" onclick="switchTab('simple')">🏟️ SIN FOTO</button>
+  <button class="tab active" onclick="switchTab('foto')">📸 CON FOTO - LOCAL</button>
+  <button class="tab" onclick="switchTab('simple')">🏟️ SIN FOTO - VISITA</button>
 </div>
 
 <!-- ===== PANEL CON FOTO ===== -->
@@ -672,7 +672,7 @@ async function redraw() {
 
   // Status
   const names = {foto:'📷 Foto', chankas:'🔴 Chankas', rival:'🔵 Rival', score:'🔢 Score'};
-  document.getElementById('sb-foto').innerHTML = `Moviendo: <span>${names[F.active]}</span> — arrastra o pellizca para zoom`;
+  document.getElementById('sb-foto').innerHTML = `Moviendo: <span>${names[F.active]}</span> — arrastra o haz zoom don los dedos`;
 }
 
 async function redrawS() {
